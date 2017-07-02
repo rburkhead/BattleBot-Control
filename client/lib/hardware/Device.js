@@ -32,6 +32,12 @@ export default class Device {
    */
   set (value) {
     this.value = value
+
+    // FIXME Only notify the HardwareManager of any changes if the vaule has changed. Let vs Const
+    // notify listener //
+    if (typeof HardwareManager.onupdateouts === 'function') {
+      HardwareManager.onupdateouts()
+    }
   }
 
   /**
