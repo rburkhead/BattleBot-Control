@@ -128,6 +128,12 @@ Promise.all([ getHardwareConfig, waitForLoad ])
       HardwareManager.setInputs(data)
       setConnectionInfo(_connection)
     }
+
+    HardwareManager.onupdateouts = () => {
+      const request = getPacket(HardwareManager.getOutputs())
+      // console.log('request', request)
+      _connection.setRobotData(request)
+    }
     // initialize UI //
     setConnectionState(_connection.state)
     // initialize control data //
