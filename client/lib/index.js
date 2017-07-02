@@ -153,9 +153,6 @@ Promise.all([ getHardwareConfig, waitForLoad ])
           addError({ type: 'LOOP', message: error.message })
         }
       }
-      const request = getPacket(HardwareManager.getOutputs())
-      // console.log('request', request)
-      _connection.setRobotData(request)
     }
   })
   .catch(err => {
