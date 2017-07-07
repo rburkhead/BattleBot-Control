@@ -67,6 +67,9 @@ var Device = function Device (name) {
 };
 Device.prototype.set = function set (value) {
   this.value = value
+  if (typeof HardwareManager.onupdateouts === 'function') {
+    HardwareManager.onupdateouts()
+  }
 };
 Device.prototype.get = function get () {
   return this.value
@@ -1033,10 +1036,15 @@ Promise.all([ getHardwareConfig, waitForLoad ])
       HardwareManager.setInputs(data)
       setConnectionInfo(_connection)
     }
+    HardwareManager.onupdateouts = function () {
+      var request = getPacket(HardwareManager.getOutputs());
+      _connection.setRobotData(request)
+    }
     setConnectionState(_connection.state)
     _connection.setRobotData(getPacket(HardwareManager.getOutputs()))
     _connection.start()
     ControlManager.start()
+    doIt()
     ControlManager.onupdate = function () {
       if (!_runLoop) { return }
       if (window.loop) {
@@ -1046,8 +1054,6 @@ Promise.all([ getHardwareConfig, waitForLoad ])
           addError({ type: 'LOOP', message: error.message })
         }
       }
-      var request = getPacket(HardwareManager.getOutputs());
-      _connection.setRobotData(request)
     }
   })
   .catch(function (err) {

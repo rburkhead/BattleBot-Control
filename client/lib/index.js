@@ -142,6 +142,7 @@ Promise.all([ getHardwareConfig, waitForLoad ])
 
     // start the UI control loop //
     ControlManager.start()
+    window.doIt()
     ControlManager.onupdate = () => {
       if (!_runLoop) return
 
