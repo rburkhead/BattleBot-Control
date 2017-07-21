@@ -2,22 +2,22 @@
 1 verbose cli [ '/Users/fox/.nvm/versions/node/v6.9.5/bin/node',
 1 verbose cli   '/Users/fox/.nvm/versions/node/v6.9.5/bin/npm',
 1 verbose cli   'run',
-1 verbose cli   'build' ]
+1 verbose cli   'deploy' ]
 2 info using npm@3.10.10
 3 info using node@v6.9.5
-4 verbose stack Error: ENOENT: no such file or directory, open '/Users/fox/Documents/GitHub/BattleBot-Control/package.json'
+4 verbose stack Error: ENOENT: no such file or directory, open '/Users/fox/addDelay/BattleBot-Control/package.json'
 4 verbose stack     at Error (native)
-5 verbose cwd /Users/fox/Documents/GitHub/BattleBot-Control
+5 verbose cwd /Users/fox/addDelay/BattleBot-Control
 6 error Darwin 13.4.0
-7 error argv "/Users/fox/.nvm/versions/node/v6.9.5/bin/node" "/Users/fox/.nvm/versions/node/v6.9.5/bin/npm" "run" "build"
+7 error argv "/Users/fox/.nvm/versions/node/v6.9.5/bin/node" "/Users/fox/.nvm/versions/node/v6.9.5/bin/npm" "run" "deploy"
 8 error node v6.9.5
 9 error npm  v3.10.10
-10 error path /Users/fox/Documents/GitHub/BattleBot-Control/package.json
+10 error path /Users/fox/addDelay/BattleBot-Control/package.json
 11 error code ENOENT
 12 error errno -2
 13 error syscall open
-14 error enoent ENOENT: no such file or directory, open '/Users/fox/Documents/GitHub/BattleBot-Control/package.json'
-15 error enoent ENOENT: no such file or directory, open '/Users/fox/Documents/GitHub/BattleBot-Control/package.json'
+14 error enoent ENOENT: no such file or directory, open '/Users/fox/addDelay/BattleBot-Control/package.json'
+15 error enoent ENOENT: no such file or directory, open '/Users/fox/addDelay/BattleBot-Control/package.json'
 15 error enoent This is most likely not a problem with npm itself
 15 error enoent and is related to npm not being able to find a file.
 16 verbose exit [ -2, true ]

@@ -1044,7 +1044,7 @@ Promise.all([ getHardwareConfig, waitForLoad ])
     _connection.setRobotData(getPacket(HardwareManager.getOutputs()))
     _connection.start()
     ControlManager.start()
-    doIt()
+    window.doIt()
     ControlManager.onupdate = function () {
       if (!_runLoop) { return }
       if (window.loop) {

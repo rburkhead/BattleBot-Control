@@ -7,9 +7,12 @@ const sleep = async function (ms) {
 }
 
 const keepRunning = async function () {
-  await window.loop().then(() => setTimeout(keepRunning, 100))
+  await sleep(1000)
+  await loop().then(() => setTimeout(keepRunning, 100))
 }
 
 const doIt = async function () {
   keepRunning()
 }
+
+window.doIt = doIt
